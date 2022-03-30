@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+               /|   |\
+              ###   ###    
+           /|##### ##### |\        
+          ## ##### ##### ##       
+         #### ###   ### ####      
+        #####   #####   #####     
+          ##  #########  ##       
+             ###########          
+            #############   
+             ##### #####
+
+          Inspected by No. 7
+-->
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!--Google Material Icons-->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!--Bootstrap-->
+        <link rel="stylesheet" href="{{ url_for('static', filename='contrib/bootstrap/css/bootstrap.min.css') }}"/>
+        <title>{% block title %}{% endblock %} - Flash Viewer</title>
+    </head>
+    <body class="container-flex">
+        <nav class="navbar navbar-dark bg-primary navbar-expand shadow">
+            <ul class="navbar-nav">
+                <a class="navbar-brand" href="{{ url_for('home') }}">Flash Viewer</a>
+                <form class="nav-item form-inline" action="{{ url_for('search.search') }}" method="GET">
+                    <input class="mx-1 input nav-item" placeholder="Search" name="term">
+                    <button class="btn btn-outline-secondary text-white nav-item" type="submit">
+                        <i class="material-icons">search</i>
+                    </button>
+                </form>
+            </ul>
+        </nav>
+        <main class="container bg-light">
+            {% block article %}
+            {% endblock %}
+        </main>
+        
+        <!--bootstrap script-->
+        <script src="{{ url_for('static', filename='contrib/bootstrap/js/bootstrap.min.js') }}"/>
+    </body>
+</html>

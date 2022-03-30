@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {{ row["title"] }}
+{% endblock %}
+
+{% block article %}
+<article class="col p-3">
+    <h1 class="row">{{ row["title"] }}</h1>
+    <div id="flash" class="row">
+        <div id="flash-container" class="col-lg my-3">
+            <object class="embed embed-responsive shadow-lg text-center" width="1024" height="800" data="{{ url_for('static', filename=path)}}">Oops! Either the file didn't load or your browser doesn't support Flash.</object>
+        </div>
+        <div id="flash-details" class="col-auto my-3">
+            <table class="table table-responsive table-bordered shadow">
+                <thead>
+                    <th colspan="2">File Details</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Title:</th>
+                        <td>{{ row["title"] }}</td>
+                    </tr>
+                    <tr>
+                        <th>Author:</th>
+                        <td>{{ row["author_name"] }}</td>
+                    </tr>
+                    <tr>
+                        <th>Description:</th>
+                        <td>{{ row["desc"] }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</article>
+{% endblock %}

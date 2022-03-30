@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock%}
+
+
+{% block article %}
+<div id="main-page" class="p-3">
+    <h1>Home Page</h1>
+    <p>Flash viewer made in Flask.</p>
+    <div class="container">
+        <div class="row p-3">
+            {% for row in rows %}
+            <div class="container p-1" style="width:200px">
+                <a href="{{ url_for('view.view',id=row['id'])}}">
+                    <article class="card card-body">
+                        <img class="card-img-top" src=
+                        "{% if row['thumbnail'] %}
+                        {{ url_for('static', filename=row['filepath']+'/'+row['thumbnail']) }}
+                        {% else %}
+                        {{ url_for('static', filename='img/placeholder.jpg')}}
+                        {% endif %}">
+                        <h5 class="card-body card-title text-center">{{ row["title"] }}</h5>
+                    </article>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
