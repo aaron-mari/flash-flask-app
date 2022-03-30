@@ -4,7 +4,7 @@ from markupsafe import Markup
 from flask import (
     Blueprint, flash, g, redirect, render_template, request, url_for, abort
 )
-from flash_app_flask.db import get_db
+from flashApp.db import get_db
 
 bp = Blueprint('view', __name__)
 

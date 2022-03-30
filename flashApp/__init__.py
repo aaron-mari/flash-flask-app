@@ -9,7 +9,7 @@ def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
         SECRET_KEY=os.environ.get("APP_KEY"),
-        DATABASE=os.path.join(app.instance_path, 'flash_app_flask.sqlite')
+        DATABASE=os.path.join(app.instance_path, 'flashApp.sqlite')
     )
     if test_config is None:
         #load instance config

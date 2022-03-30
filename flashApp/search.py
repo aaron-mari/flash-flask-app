@@ -1,7 +1,7 @@
 from flask import (
     Blueprint, flash, g, redirect, render_template, request, url_for, abort
 )
-from flash_app_flask.db import get_db
+from flashApp.db import get_db
 from pprint import pprint as p
 bp = Blueprint('search', __name__)
 
